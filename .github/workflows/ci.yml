@@ -30,10 +30,6 @@ jobs:
       - name: Встановити платформу Arduino AVR
         run: arduino-cli core install arduino:avr
 
-      # Створити директорію для зборки CMake
-      - name: Створити директорію для зборки
-        run: mkdir build
-
       # Запустити CMake для конфігурації проєкту
       - name: Конфігурація CMake
         run: cmake -S . -B build
