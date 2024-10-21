@@ -1,0 +1,4 @@
+D:/csad/lab2/out/build/default/CMakeFiles/client.dir
+D:/csad/lab2/out/build/default/CMakeFiles/compile_server.dir
+D:/csad/lab2/out/build/default/CMakeFiles/ALL_BUILD.dir
+D:/csad/lab2/out/build/default/CMakeFiles/ZERO_CHECK.dir

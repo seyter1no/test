@@ -1,0 +1,58 @@
+name: CI для C++ та Arduino
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  cpp-arduino-build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Забезпечити налаштування Arduino CLI (якщо ще не доступний на ранері)
+      - name: Встановити Arduino CLI
+        uses: arduino/setup-arduino-cli@v1
+        with:
+          version: '0.19.2'
+
+      # Встановити CMake
+      - name: Встановити CMake
+        run: choco install cmake
+
+      # Встановити платформу Arduino AVR
+      - name: Встановити платформу Arduino AVR
+        run: arduino-cli core install arduino:avr
+
+      # Створити директорію для зборки CMake
+      - name: Створити директорію для зборки
+        run: mkdir build
+
+      # Запустити CMake для конфігурації проєкту
+      - name: Конфігурація CMake
+        run: cmake -S . -B build
+        shell: cmd
+
+      # Зібрати проєкт за допомогою CMake
+      - name: Збірка з CMake
+        run: cmake --build build
+        shell: cmd
+
+      # Запустити файл build.bat для компіляції клієнта та Arduino
+      - name: Запустити файл build.bat для компіляції клієнта та Arduino
+        run: |
+          ./build.bat
+        shell: cmd
+
+      # Завантажити зкомпільовані артефакти (клієнт та Arduino)
+      - name: Завантажити артефакти збірки
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: out/*

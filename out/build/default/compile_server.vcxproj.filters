@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\csad\lab2\out\build\default\CMakeFiles\33b883e421f8de0814408b688cf22ea3\compile_server.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\csad\lab2\CmakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\csad\lab2\out\build\default\CMakeFiles\compile_server" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{23997138-7FC4-317A-BF02-08C5C740E216}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
