@@ -44,12 +44,6 @@ jobs:
         run: cmake --build build
         shell: cmd
 
-      # Запустити файл build.bat для компіляції клієнта та Arduino
-      - name: Запустити файл build.bat для компіляції клієнта та Arduino
-        run: |
-          ./build.bat
-        shell: cmd
-
       # Завантажити зкомпільовані артефакти (клієнт та Arduino)
       - name: Завантажити артефакти збірки
         uses: actions/upload-artifact@v3
